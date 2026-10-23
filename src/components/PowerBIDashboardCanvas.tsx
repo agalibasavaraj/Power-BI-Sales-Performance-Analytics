@@ -732,7 +732,7 @@ export const PowerBIDashboardCanvas: React.FC<Props> = ({ records }) => {
                 {fmtCurr(kpis.averageOrderValue)}
               </div>
               <div className="text-[11px] text-slate-500 mt-1">
-                <span>Avg Disc: {kpis.avgDiscountPct.toFixed(1)}%</span>
+                <span>Avg Disc: {kpis.avgDiscountPct.toFixed(2)}%</span>
               </div>
             </div>
 

@@ -4,6 +4,13 @@ Follow these sequential steps in Microsoft Power BI Desktop to build the product
 
 ---
 
+## Quick Start: Direct .PBIX File Access
+If you have Microsoft Power BI Desktop installed:
+1. Double-click **`Sales-Performance-Analytics/dashboard/Sales_Performance_Analytics.pbix`** to open the ready-to-view dashboard immediately with all visual cards, charts, Star Schema relationships, and DAX measures pre-loaded!
+2. Alternatively, open **`Sales_Performance_Analytics.pbit`** to load the template structure.
+
+---
+
 ## Step 1: Open Power BI & Apply Theme
 1. Launch **Microsoft Power BI Desktop**.
 2. Go to **View** ribbon tab -> **Themes** dropdown -> **Browse for themes...**

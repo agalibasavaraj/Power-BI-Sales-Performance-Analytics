@@ -56,20 +56,24 @@ export default function App() {
           </div>
 
           {/* Quick Metrics Badge */}
-          <div className="hidden lg:flex items-center gap-4 text-xs">
+          <div className="hidden lg:flex items-center gap-3 text-xs">
+            <span className="bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded font-mono font-semibold">
+              .PBIX File Ready
+            </span>
+            <div className="text-slate-600">|</div>
             <div className="flex items-center gap-1.5 text-slate-300">
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              <span>1,445 Fact Records</span>
+              <span>Synthetic (Seed 42)</span>
             </div>
-            <div className="text-slate-500">|</div>
+            <div className="text-slate-600">|</div>
             <div className="text-slate-300">
-              <span>Revenue: </span>
-              <strong className="text-emerald-400">$2.23M</strong>
+              <span>Avg Disc: </span>
+              <strong className="text-amber-300">8.64%</strong>
             </div>
-            <div className="text-slate-500">|</div>
+            <div className="text-slate-600">|</div>
             <div className="flex items-center gap-1 text-emerald-400 font-medium">
               <ShieldCheck className="w-3.5 h-3.5" />
-              <span>DAX = SQL Verified</span>
+              <span>DAX = SQL ($0.00 delta)</span>
             </div>
           </div>
 

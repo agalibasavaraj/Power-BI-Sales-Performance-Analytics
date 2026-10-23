@@ -2,24 +2,27 @@
 
 **Project**: Sales Performance Analytics Dashboard — Power BI  
 **Author**: Basavaraj Agali (Data Analyst Trainee / Power BI Developer)  
-**Dataset Source**: Retail Superstore Commercial Transactions (`data/raw_sales_data.csv`)  
+**Dataset Provenance**: **Synthetic Enterprise Retail Dataset** generated deterministically (`seed = 42`)  
+**Data Volume**: Raw: 1,448 rows (dirty input) | Cleaned Fact: 1,445 Transaction Rows | 750 Distinct Orders | 40 Accounts | 864 SKUs  
 **Time Horizon**: January 1, 2023 – December 31, 2025 (3 Full Fiscal Years)  
-**Total Records**: 1,445 Transaction Rows | 750 Distinct Orders | 40 Customers | 864 Products  
+**Audited Average Discount**: **8.64%** company-wide across all order line items  
 
 ---
 
 ## 1. Executive Summary & File Audit
 
-The dataset represents transactional retail and commercial sales across multiple regions in the United States. Each row represents a single order line item (a distinct product purchased within an order).
+This project utilizes a **statistically realistic, synthetic commercial sales dataset** generated via a deterministic random seed (`seed = 42`). This approach was chosen to model enterprise-grade transaction complexity—including multi-line order baskets, holiday seasonality, and discount margin vulnerabilities—while ensuring the project is completely safe for public portfolio showcase without violating commercial Non-Disclosure Agreements (NDAs).
 
 | Metric | Inspected Value | Note |
 | :--- | :--- | :--- |
-| **Row Count** | 1,445 records | Represents individual order line items |
-| **Unique Orders** | 750 distinct orders | An order may contain 1 to 3 distinct items |
+| **Raw Ingest Count** | 1,448 records | Located in `data/raw_sales_data.csv` (contains dirty data) |
+| **Cleaned Fact Count** | 1,445 records | Located in `data/cleaned_sales_dataset.csv` (post Power Query ETL) |
+| **Unique Orders** | 750 distinct orders | An order contains 1 to 3 distinct items (multi-line basket) |
 | **Unique Customers** | 40 distinct accounts | Segmented across Consumer, Corporate, and Home Office |
 | **Unique Products** | 864 SKUs | Catalog spanning Technology, Furniture, and Office Supplies |
+| **Average Discount** | **8.64%** | Audited average discount rate across all 1,445 transactions |
 | **Geographic Coverage** | 4 US Regions, 20 States, 20 Cities | West, East, Central, South |
-| **Date Range** | 2023-01-01 to 2025-12-31 | Ideal for 36-month trend analysis, MoM, and YoY growth |
+| **Date Range** | 2023-01-01 to 2025-12-31 | 36 contiguous months for MoM and YoY Time Intelligence |
 
 ---
 

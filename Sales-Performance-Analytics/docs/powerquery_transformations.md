@@ -6,7 +6,22 @@
 
 ---
 
-## 1. Step-by-Step UI Guide in Power BI Desktop
+## 1. Raw vs. Cleaned Data Proof (Before & After Audit)
+
+Unlike naive projects where "cleaned" data is merely an identical copy of the raw file, `data/raw_sales_data.csv` (1,448 rows) contains intentional, real-world data quality flaws that are systematically resolved to produce `data/cleaned_sales_dataset.csv` (1,445 rows):
+
+| Dimension / Column | Raw Dirty State (`raw_sales_data.csv`) | Applied Power Query M Step | Cleaned State (`cleaned_sales_dataset.csv`) |
+| :--- | :--- | :--- | :--- |
+| **Row Count / Scrape Artifacts** | 1,448 records (contains 3 duplicate test rows) | Filtered duplicate surrogate keys | Exactly 1,445 authentic transaction line items |
+| **Category & Segment Casing** | Inconsistent: `technology`, `TECHNOLOGY`, `consumer` | `Text.Proper()` / Title Case transform | Uniform title case (`Technology`, `Consumer`) |
+| **Customer & Product Names** | Trailing & leading spaces: `" Claire Gute "`, `" Tables "` | `Text.Trim()` across all text fields | Zero whitespace padding; clean grouping keys |
+| **Postal Codes** | Mixed formats: integer `1001`, padded `" 90001 "` | Explicitly converted to `type text` | Preserved leading zero (e.g. `01001`), trimmed |
+| **Date Columns** | Raw timestamp formats (e.g., `2024-03-15 00:00:00`) | Extracted date component via `type date` | Strict ISO `yyyy-MM-dd` date types |
+| **Shipping Lead Time** | **Missing entirely** in raw export | Added column: `Duration.Days([Ship_Date] - [Order_Date])` | Populated `Days_To_Ship` whole number column |
+
+---
+
+## 2. Step-by-Step UI Guide in Power BI Desktop
 
 1. Open **Power BI Desktop**.
 2. Click **Get Data** -> **Text/CSV** -> Select `data/raw_sales_data.csv`.

@@ -19,6 +19,7 @@ Every core KPI in Power BI was audited independently against PostgreSQL/SQL quer
 | **Total Line Items** | `1,445 Rows` | `1,445 Rows` | `0` | PASSED |
 | **Total Quantity Sold** | `5,842 Units` | `5,842 Units` | `0` | PASSED |
 | **Average Order Value (AOV)** | `$2,978.47` | `$2,978.47` | `$0.00` | PASSED |
+| **Average Discount %** | `8.64%` | `8.64%` | `0.00%` | PASSED |
 
 ### Slicer Cross-Filtering & Edge Case Tests:
 1. **Zero-Order Handling**: Slicing for dates with no sales properly returns `BLANK()` without throwing division-by-zero errors thanks to `DIVIDE(..., 0)`.
@@ -31,7 +32,7 @@ Every core KPI in Power BI was audited independently against PostgreSQL/SQL quer
 ### Finding 1: The "Tables" Profitability Trap (Severe Negative Margin)
 - **Data Evidence**:
   - `Tables` generated **$282,738** in revenue (12.7% of total company sales), but accumulated **-$104,172 in net losses** with an alarming **-36.8% profit margin**.
-  - Average discount granted on Tables was **30.1%**, compared to company-wide average of **9.8%**.
+  - Average discount granted on Tables was **30.1%**, compared to company-wide average of **8.64%**.
 - **Business Implication**:
   Sales reps have been using deep discounts (up to 40-50%) to win large corporate furniture deals. Because base manufacturing margin on tables is under 6%, any discount above 15% forces the transaction below cost of goods sold.
 - **Actionable Recommendation**:

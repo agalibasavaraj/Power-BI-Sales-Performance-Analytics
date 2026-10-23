@@ -1,0 +1,14 @@
+# Power BI Auto-Recovery and Large Binaries
+*.pbix.backup
+*.pbit.backup
+*.tmp
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Node modules & build artifacts
+node_modules/
+dist/
+.cache/

@@ -1,0 +1,6 @@
+{
+  "name": "Power BI Sales Performance Analytics",
+  "description": "Professional, interview-ready Sales Performance Analytics project with Power BI Desktop workflows, DAX measures, Star Schema data modeling, SQL validation, and interactive mentor companion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

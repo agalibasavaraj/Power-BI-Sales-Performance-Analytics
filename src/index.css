@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@media print {
+  /* Hide non-essential interactive elements, navigation, headers, footers */
+  header,
+  footer,
+  nav,
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset document flow and background for full-width print */
+  html,
+  body,
+  #root,
+  main {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+  }
+
+  /* Target canvas report component: Centered and 100% full width */
+  #powerbi-canvas-report {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 16px !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    page-break-inside: auto;
+  }
+
+  /* Print optimization for cards and visuals */
+  .grid {
+    display: grid !important;
+  }
+
+  /* Ensure SVG charts and data tables fit smoothly without clipping */
+  svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  table {
+    width: 100% !important;
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  /* High contrast borders and readability on print */
+  .border,
+  .border-slate-200,
+  .border-slate-100 {
+    border-color: #cbd5e1 !important;
+  }
+}
+
+/* Page orientation and margins */
+@page {
+  size: landscape;
+  margin: 12mm;
+}
